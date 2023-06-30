@@ -24,6 +24,10 @@ public class DBUtil {
 		// private constructor to prevent instantiation
 	}
 
+	public static void main(String[] args) {
+		System.out.println(getSessionFactory());
+	}
+
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
 			synchronized (DBUtil.class) {
@@ -32,9 +36,9 @@ public class DBUtil {
 						Configuration configuration = new Configuration();
 						Properties settings = new Properties();
 						settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-						settings.put(Environment.URL, "jdbc:mysql://localhost:3306/phoneweb?useSSL=false");
+						settings.put(Environment.URL, "jdbc:mysql://localhost:3306/phoneweb?useSSL=false&allowPublicKeyRetrieval=true");
 						settings.put(Environment.USER, "root");
-						settings.put(Environment.PASS, "phuoc102@");
+						settings.put(Environment.PASS, "azkaban11");
 						settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLInnoDBDialect");
 
 						settings.put(Environment.SHOW_SQL, "true");
